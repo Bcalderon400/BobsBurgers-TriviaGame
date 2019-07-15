@@ -1,17 +1,18 @@
-var quizQuestions = {
-    {
-        questions: 'What is my full name?',
-        choices: ['brian calderon', 'karen calderon', 'aiden calderon', 'elise calderon'],
-        correctAnswers: 'brian calderon',
+var quizQuestions = [{
+        question: 'what is your full name?',
+        choices: ['brian calderon', 'adam west', 'barry allen', 'superman'],
+        correctAnswer: 'brian calderon',
     },
     {
-        questions: 'Fav sport?',
-        choices: ['football', 'hockey', 'soccer', 'tennis'],
-        correctAnswers: 'soccer',
+        question: 'fav sport?',
+        choices: ['football', 'soccer', 'tennis', 'golf'],
+        correctAnswer: 'soccer',
     },
     {
-        questions: 'what town did you live?',
-        choices: ['fresno', 'dinuba', 'yuba city', 'orosi'],
-        correctAnswers: 'dinuba',
-    },
-}
+        question: 'fav tv show?',
+        choices: ['simpsons', 'family guy', 'futurama', 'matrix'],
+        correctAnswer: 'matrix',
+    }
+
+];
+console.log(quizQuestions)
