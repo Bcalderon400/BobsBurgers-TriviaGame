@@ -1,4 +1,4 @@
-var counter = 5;
+var counter = 15;
 var currentQuestion = 0;
 var score = 0;
 var lost = 0;
@@ -27,7 +27,8 @@ function timeUp() {
 
     lost++;
 
-    nextQuestion();
+    preloadImage('lost')
+    setTimeout(nextQuestion, 3 * 1000)
 }
 
 function countDown() {
@@ -41,7 +42,7 @@ function countDown() {
 
 function loadQuestion() {
 
-    counter = 5;
+    counter = 15;
     timer = setInterval(countDown, 1000);
 
     var question = quizQuestions[currentQuestion].question;
@@ -76,11 +77,15 @@ $(document).on('click', '.choice', function() {
     if (correctAnswer === selectedAnswer) {
         score++;
         console.log('win')
-        nextQuestion()
+        preloadImage('win')
+        setTimeout(nextQuestion, 3 * 1000)
+
     } else {
         lost++;
         console.log('lost')
-        nextQuestion()
+        preloadImage('lost')
+        setTimeout(nextQuestion, 3 * 1000)
+
     }
 
 })
@@ -97,7 +102,7 @@ function displayResult() {
 }
 
 $(document).on('click', '#reset', function() {
-    counter = 5;
+    counter = 15;
     currentQuestion = 0;
     score = 0;
     lost = 0;
@@ -106,4 +111,32 @@ $(document).on('click', '#reset', function() {
     loadQuestion()
 
 })
-loadQuestion();
+
+function randomImage(images) {
+    var random = Math.floor(Math.random() * images.length)
+    var randomImage = images[random]
+    return randomImage
+}
+
+function preloadImage(status) {
+    var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+    if (status === 'win') {
+        $('#game').html(`
+<p class="preload-image">Congratulations, you picked the correct answer.</p>
+<p class="preload-image">The correct answer is <b>${correctAnswer}</b> </p>
+<img src="${randomImage(correctImages)}"/>
+`)
+    } else {
+        $('#game').html(`
+<p class="preload-image">The correct answer was <b>${correctAnswer}</b></p>
+<p class="preload-image">You lost</p>
+<img src="${randomImage(wrongImages)}"/>
+`)
+    }
+}
+
+$("#start").click(function() {
+    $('#start').remove()
+    $('#time').html(counter)
+    loadQuestion()
+})

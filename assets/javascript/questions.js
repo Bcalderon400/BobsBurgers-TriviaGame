@@ -17,16 +17,16 @@ var quizQuestions = [{
 ];
 
 var correctImages = [
-    "../assets/images/fireworks.gif",
-    "../assets/images/dog.gif,
-    "../assets/images/sponge.gif",
-    "../assets/images/tina.gif"
+    "./assets/images/fireworks.gif",
+    "./assets/images/dog.gif",
+    "./assets/images/sponge.gif",
+    "./assets/images/tina.gif"
 ];
 
-var wronImages = [
-    "../assets/images/smh.gif",
-    "../assets/images/no.gif",
-    "../assets/images/hairspray.gif",
-    "../assets/images/mars.gif"
+var wrongImages = [
+    "./assets/images/smh.gif",
+    "./assets/images/no.gif",
+    "./assets/images/hairspray.gif",
+    "./assets/images/mars.gif"
 ];
 console.log(quizQuestions)
