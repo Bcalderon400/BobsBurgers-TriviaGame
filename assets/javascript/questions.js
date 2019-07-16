@@ -42,16 +42,22 @@ var quizQuestions = [{
 ];
 
 var correctImages = [
-    "./assets/images/fireworks.gif",
-    "./assets/images/dog.gif",
-    "./assets/images/sponge.gif",
-    "./assets/images/tina.gif"
+    "./assets/images/good1.gif",
+    "./assets/images/good2.gif",
+    "./assets/images/good3.gif",
+    "./assets/images/good4.gif",
+    "./assets/images/good5.gif",
+    "./assets/images/good6.gif"
 ];
 
 var wrongImages = [
-    "./assets/images/smh.gif",
-    "./assets/images/no.gif",
-    "./assets/images/hairspray.gif",
-    "./assets/images/mars.gif"
+    "./assets/images/bad1.gif",
+    "./assets/images/bad2.gif",
+    "./assets/images/bad3.gif",
+    "./assets/images/bad4.gif",
+    "./assets/images/bad5.gif",
+    "./assets/images/bad6.gif"
 ];
-console.log(quizQuestions)
+
+
+console.log(wrongImages)

@@ -9,6 +9,7 @@ body {
 .container {
     margin-top: 40px;
     font-family: 'Sniglet', cursive;
+    text-align: center;
 }
 
 .jumbotron {
@@ -20,7 +21,6 @@ body {
 
 h1 {
     padding: 20px;
-    color: white;
 }
 
 b {
@@ -34,12 +34,6 @@ b {
     border: 4px solid rgb(237, 33, 48);
     text-decoration: none;
     text-shadow: -2px 1px black;
-    text-align: center;
-}
-
-#time {
-    text-align: center;
-    color: white;
 }
 
 #time,
@@ -47,6 +41,7 @@ b {
 .questions,
 .afterGame,
 h1 {
+    color: white;
     text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;
 }
 
@@ -55,7 +50,10 @@ h1 {
 .afterGame {
     color: white;
     font-size: 35px;
-    text-align: center;
+}
+
+.questions {
+    margin-bottom: 30px;
 }
 
 .choice {
@@ -65,8 +63,11 @@ h1 {
     border: 4px solid rgb(245, 225, 36);
     padding: 10px;
     cursor: pointer;
-    text-align: center;
     width: 300px;
     margin: 0 auto;
     margin-bottom: 20px;
+}
+
+audio {
+    text-align: center;
 }

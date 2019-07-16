@@ -28,8 +28,9 @@ function timeUp() {
     lost++;
 
     preloadImage('lost')
-    setTimeout(nextQuestion, 3 * 1000)
+    setTimeout(nextQuestion, 2 * 1000)
 }
+
 
 function countDown() {
     counter--;
@@ -99,7 +100,7 @@ function displayResult() {
     <p class="afterGame">You got <b>${score}</b> question(s) right!</p>
     <p class="afterGame">You missed <b>${lost}</b> question(s).</p>
     <p class="afterGame">Total questions <b>${quizQuestions.length}</b> question(s). </p>
-    <button class="btn btn-primary" id="reset">Reset Game</button>
+    <button class="btn btn-primary btn-lg" id="reset">Reset Game</button>
     
     `;
     $('#game').html(result)
@@ -126,15 +127,15 @@ function preloadImage(status) {
     var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
     if (status === 'win') {
         $('#game').html(`
-<p class="preload-image">Congratulations, you picked the correct answer.</p>
+<p class="preload-image"><b>Congratulations, you Won!<b>.</p>
 <p class="preload-image">The correct answer is <b>${correctAnswer}</b> </p>
-<img src="${randomImage(correctImages)}"/>
+<img src="${randomImage(correctImages)}" class='Gif'/>
 `)
     } else {
         $('#game').html(`
 <p class="preload-image">The correct answer was <b>${correctAnswer}</b></p>
 <p class="preload-image">You lost</p>
-<img src="${randomImage(wrongImages)}"/>
+<img src="${randomImage(wrongImages)}" class='Gif'/>
 `)
     }
 }
