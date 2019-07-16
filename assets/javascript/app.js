@@ -7,9 +7,20 @@ var timer;
 
 
 function nextQuestion() {
-    currentQuestion++;
-    loadQuestion();
+
+    var isQuestionOver = (quizQuestions.length - 1) === currentQuestion;
+
+    if (isQuestionOver) {
+
+        console.log('Game is over')
+        displayResult();
+
+    } else {
+        currentQuestion++;
+        loadQuestion();
+    }
 }
+
 
 function timeUp() {
     clearInterval(timer);
@@ -54,5 +65,34 @@ function loadChoices(choices) {
 
     }
     return result;
+}
+
+$(document).on('click', '.choice', function() {
+    clearInterval(timer)
+
+    var selectedAnswer = $(this).attr('data-answer')
+    var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+
+    if (correctAnswer === selectedAnswer) {
+        score++;
+        console.log('win')
+        nextQuestion()
+    } else {
+        lost++;
+        console.log('lost')
+        nextQuestion()
+    }
+    console.log('yup', selectedAnswer)
+})
+
+function displayResult() {
+    var result = `
+    <p>You get ${score} question(s) right!</p>
+    <p>You missed ${lost} question(s)</p>
+    <p>Total questions ${quizQuestions.length} question(s) </p>
+    <button class="btn btn-primary">Reset Game</button>
+    
+    `;
+    $('#game').html(result)
 }
 loadQuestion();
