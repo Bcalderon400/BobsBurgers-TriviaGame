@@ -36,7 +36,7 @@ var quizQuestions = [{
     {
         question: 'What is the nickname of the kids Health-Challenged friend, Rudy?',
         choices: ['Regular-Sized Rudy', 'Rowdy Rudy', 'Righteous Rudy', 'Rudolph Rudy'],
-        correctAnswer: 'Regula-Sized Rudy',
+        correctAnswer: 'Regular-Sized Rudy',
     },
 
 ];

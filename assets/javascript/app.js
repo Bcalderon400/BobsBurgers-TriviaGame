@@ -53,7 +53,7 @@ function loadQuestion() {
     $('#time').html('Timer: ' + counter);
 
     $('#game').html(`
-        <h4>${question}</h4>
+        <h4 class="questions">${question}</h4>
         ${loadChoices(choices)}
     `)
 
@@ -79,24 +79,26 @@ $(document).on('click', '.choice', function() {
     if (correctAnswer === selectedAnswer) {
         score++;
         console.log('win')
+
         preloadImage('win')
         setTimeout(nextQuestion, 3 * 1000)
 
     } else {
         lost++;
         console.log('lost')
+
         preloadImage('lost')
         setTimeout(nextQuestion, 3 * 1000)
 
     }
-
+    //$('#time').remove()
 })
 
 function displayResult() {
     var result = `
-    <p>You get ${score} question(s) right!</p>
-    <p>You missed ${lost} question(s)</p>
-    <p>Total questions ${quizQuestions.length} question(s) </p>
+    <p class="afterGame">You got <b>${score}</b> question(s) right!</p>
+    <p class="afterGame">You missed <b>${lost}</b> question(s).</p>
+    <p class="afterGame">Total questions <b>${quizQuestions.length}</b> question(s). </p>
     <button class="btn btn-primary" id="reset">Reset Game</button>
     
     `;
@@ -138,6 +140,7 @@ function preloadImage(status) {
 }
 
 $("#start").click(function() {
+    $('#trivia').remove()
     $('#start').remove()
     $('#time').html(counter)
     loadQuestion()
