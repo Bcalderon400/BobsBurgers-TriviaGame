@@ -37,6 +37,7 @@ function countDown() {
     if (counter === 0) {
         timeUp()
     }
+
 }
 
 
@@ -44,6 +45,7 @@ function loadQuestion() {
 
     counter = 15;
     timer = setInterval(countDown, 1000);
+
 
     var question = quizQuestions[currentQuestion].question;
     var choices = quizQuestions[currentQuestion].choices;
