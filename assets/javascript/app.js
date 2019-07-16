@@ -82,7 +82,7 @@ $(document).on('click', '.choice', function() {
         console.log('lost')
         nextQuestion()
     }
-    console.log('yup', selectedAnswer)
+
 })
 
 function displayResult() {
@@ -90,9 +90,20 @@ function displayResult() {
     <p>You get ${score} question(s) right!</p>
     <p>You missed ${lost} question(s)</p>
     <p>Total questions ${quizQuestions.length} question(s) </p>
-    <button class="btn btn-primary">Reset Game</button>
+    <button class="btn btn-primary" id="reset">Reset Game</button>
     
     `;
     $('#game').html(result)
 }
+
+$(document).on('click', '#reset', function() {
+    counter = 5;
+    currentQuestion = 0;
+    score = 0;
+    lost = 0;
+    timer = null;
+
+    loadQuestion()
+
+})
 loadQuestion();
