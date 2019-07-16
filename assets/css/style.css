@@ -1,15 +1,40 @@
 /*******/
 
 body {
-    background-image: url("../images/old.jpg");
+    background-image: url("../images/Bobs_street_scene.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
+.jumbotron {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: none;
+}
+
+#logo {
+    margin-top: -65px;
+}
+
+h1 {
+    font-family: 'Sniglet', cursive;
+    padding: 20px;
+}
+
+#start {
+    font-family: 'Sniglet', cursive;
+    background-color: rgb(245, 225, 36);
+    color: rgb(237, 33, 48);
+    border: 4px solid rgb(237, 33, 48);
+    text-decoration: none;
+    text-shadow: -2px 1px black;
+}
+
 .container {
-    margin-top: 150px;
+    margin-top: 40px;
 }
 
 .choice {
